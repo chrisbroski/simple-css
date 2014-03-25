@@ -22,10 +22,10 @@ pre {background: #eee; padding: 10px; overflow: auto; }
 <pre>html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
 body {margin: 0 auto; max-width: 580px; }
 div.article > *:first-child {margin-top: 0; }</pre>
-<p>The page you are reading uses only this CSS, plus some styling on the <code>&lt;pre&gt;</code> elements for code examples.
-<p>The HTML required to use <em>simple.css</em> is this viewport meta tag in the head section:
+<p>The page you are reading uses only this CSS, plus some styling on the <code>&lt;pre&gt;</code> elements for the code examples.
+<p>There are two HTML requirements to use <em>simple.css</em>. First is the viewport meta tag in the head section (for mobile display.)
 <pre>&lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no"&gt;</pre>
-<p>And body content wrapped in a div with class value equal to "article."
+<p>Alos, the body content should be wrapped in a div with class value equal to "article."
 <pre>&lt;div class="article"&gt;&lt;/div&gt;</pre>
 <p>When HTML5 is more widely supported I will change this to:
 <pre>&lt;article&gt;&lt;/article&gt;</pre>
@@ -40,13 +40,13 @@ div.article > *:first-child {margin-top: 0; }</pre>
 
 <p>When the Web was being invented, most screens were much smaller and lower resolution than today. Web documents that looked fine full-screen then, when displayed maximized on a 24-inch monitor are now unreadable, rendering paragraphs as one long line. A body width of 580 pixels is about 72 characters wide in my browser's default paragraph sans-serif font. 
 
-<p>For mobile devices the problem is the opposite &mdash; increasing readability on a tiny screen. I included the meta viewport element mentioned above to ensure the document utilizes the full screen width on mobile devices. Using the <var>max-width</var> CSS property instead of <var>width</var> means that smaller devices will ignore its value. The combination of this meta element and the body size measuring less than 580 pixels will display your content using the entire screen.
+<p>For mobile devices the problem is the opposite &mdash; increasing readability on a tiny screen. I included the meta viewport element mentioned above to ensure the document makes use of the entire screen width on mobile devices. Using the <var>max-width</var> CSS property instead of <var>width</var> means that smaller devices will ignore its value and stretch across the entire screen.
 
 <h3>Font Face</h3>
 <pre>html {font-family: droid sans, sans-serif; }</pre>
 <p>Traditional serif (extra little lines on the ends of letters) fonts were developed for printed text. Unfortunately, low-resolution monitors cannot render the fine detail needed to display the serifs. Even though screen resolution is high enough today to handle serif font faces, sans-serif fonts are still considered superior for screen readability, if only to support low-resolution devices.
 
-<p>Using the generic font-family <var>sans-serif</var> instead of a specific font face in the CSS declaration, we allow the target device to choose (Arial for Microsoft, Helvetica for Apple.) Droid Sans is a very nice sans-serif screen font developed for the Android operating system. Unfortunately it is not set as the default sans-serif font in their mobile browser so I included it specifically in the CSS declaration.
+<p>Using the generic font-family <var>sans-serif</var> instead of a specific font face in the CSS declaration, we allow the target device to choose the preferred font (typically Arial for Microsoft products and Helvetica for Apple.) Droid Sans is a very nice sans-serif screen font developed for the Android operating system. Unfortunately it is not set as the default sans-serif font in their mobile browser so I added it specifically to the CSS declaration.
 
 <h3>Floating Center</h3>
 <pre>body {margin: 0 auto; }</pre>
@@ -58,10 +58,10 @@ div.article > *:first-child {margin-top: 0; }</pre>
 
 <h3>Remove Top Margin from First Element</h3>
 <pre>div.article > *:first-child {margin-top: 0; }</pre>
-<p>At the beginning of this article, I mentioned that all HTML body content was wrapped in the div with class "article." There are good reasons for this, not the least because it is required to trigger "reading mode" in mobile Safari.
-<p>This, in addition to the CSS rule, will make the content begin immediately after the 10px html margin, instead of having an extra gaping blank spot for no good reason caused by the browser default margins.
+<p>At the beginning of this article, I mentioned that all HTML body content was wrapped in a div element with class "article." There are reasons for this, but the most practical is that it is required to enable "reader mode" support in mobile Safari.
+<p>This, in addition to the CSS rule, will make your content begin immediately after the 10px html top padding, instead of after a useless gaping blank spot caused by the browser's default margins.
 
 <h3>Hopefully a Good Start</h3>
-<p>I will be testing this (by using it in my HTML documents and on every device I come across) starting now, and improving it as needed. Keeping with the spirit of this project, I hope there will not be many additions &mdash; I would like to keep the CSS as simple as the display of the document content. If you have thoughts, please <a href="https://github.com/chrisbroski/simple-css">fork the repository</a> or <a href="https://github.com/chrisbroski/simple-css/issues">report an issue</a>. 
+<p>I will be testing this CSS (by using it in my HTML documents and viewing on every device I can find) starting now, and improving it as needed. Keeping with the spirit of this project, I hope there will not be many additions &mdash; I would like to keep the CSS as simple as the display of the document content. If you have thoughts, please <a href="https://github.com/chrisbroski/simple-css/issues">report an issue</a> or if you like, fork <a href="https://github.com/chrisbroski/simple-css">the repository</a>.
 
 </div>
