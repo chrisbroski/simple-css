@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<title>Simple.css</title>
+<style type="text/css">
+/* Simple.css */
+html {padding: 10px; font-family: droid sans, sans-serif; }
+body {margin: 0 auto; max-width: 580px; }
+div.article > *:first-child {margin-top: 0; }
+
+pre {background: #eee; padding: 10px; overflow: auto; }
+</style>
+
+<body>
+<div class="article">
+<h1>Simple.css</h1>
+<p>Simple.css is my attempt at the least amount of CSS (in addition to the browser default styles) needed to maximize the readability (clarity and economy of display) of English language web documents on both desktop and mobile devices.
+<p>Without further digression, here is <var>simple.css</var>:
+<pre>html {padding: 10px; font-family: droid sans, sans-serif; }
+body {margin: 0 auto; max-width: 580px; }
+div.article > *:first-child {margin-top: 0; }</pre>
+
+<h2>Reasoning</h2>
+<p>The thoughts behind this CSS are based on actual research, my first hand-experience and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added, but I am happy labelling the above CSS "version 1.0."
+<p>Here is my reasoning for each style rule.
+
+<h3>Maximum Width</h3>
+<pre>body {max-width: 580px; }</pre>
+<p>Setting a maximum width may be the most important improvement to readability over default browser styles alone. Choose a random book from your shelf and open to any page. Count the words of a single line of paragraph text. Your measurement should fall in between 10 and 15 (or about 72 characters per line). This was not chosen randomly &mdash; the longer a line of text becomes, the easier it is to lose vertical eye position while reading a paragraph.
+
+<p>When the Web was being invented, most screens were much smaller and lower resolution than today. Web documents that looked fine full-screen then, when displayed maximized on a 24-inch monitor are now unreadable, rendering paragraphs as one long line. A body width of 580 pixels is about 72 characters wide in my browser's default paragraph sans-serif font. 
+
+<p>For mobile devices the problem is the opposite &mdash; how to increase readability on a tiny screen. First, I include this line in the <code>&lt;head&gt;</code> of the HTML code:
+<pre>&lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no"&gt;</pre>
+<p>This ensures the document utilizes the full width of the screen. The combination of this meta element and the body size measuring less than 580 pixels will display your content using all of the available screen width.
+
+<h3>Font Face</h3>
+<pre>html {font-family: droid sans, sans-serif; }</pre>
+<p>Traditional serif (extra little lines on the ends of letters) fonts were developed for printed text. Sadly, low-resolution monitors cannot display the fine detail of the serifs. Even though screen resolution is high enough today to clearly display serifs, sans-serif fonts are still considered superior for screen readability, if only to support low-resolution devices.
+
+<p>Using the generic font-family <var>sans-serif</var> instead of a specific font face in the CSS declaration, we allow the target device to choose (Arial for Microsoft, Helvetica for Apple.) Droid Sans is a very nice sans-serif screen font developed for the Android operating system. Unfortunately it is not set as the default sans-serif font in their mobile browser so I included it specifically in the CSS declaration.
+
+<h3>Floating Center</h3>
+<pre>body {margin: 0 auto; }</pre>
+<p>When a short-width document is displayed maximized in a very large monitor, by default it is flush against the left side. By centering the document content, we are positioning it directly in front of the user's face. In my opinion, dividing the extra space between both sides of the content also feels more balanced than one huge blank area on the right.
+
+<h3>Minimial Margins</h3>
+<pre>html {padding: 10px; }</pre>
+<p>For screen resolutions smaller than 580 pixels, we need to add a little space around the content so it is not smashed up against the side of the browser window.
+
+<h3>Remove Top Margin from First Element</h3>
+<pre>div.article > *:first-child {margin-top: 0; }</pre>
+<p>In my HTML, I wrap my main content with:
+<pre>&lt;div class="article"&gt;&lt;/div&gt;</pre>
+<p>When HTML5 is more widely supported I will change this to:
+<pre>&lt;article&gt;&lt;/article&gt;</pre>
+<p>There are good reasons for wrapping main content in an HTML element, not the least because it is required to trigger "reading mode" in mobile Safari.
+<p>This, in addition to the CSS rule, will make the content start right at the top of the page, instead of having a gaping blank spot for no good reason.
+
+<h3>Hopefully a Good Start</h3>
+<p>I will be testing this (by using it in my HTML documents and on every device I come across) starting now, and improving it as needed. Keeping with the spirit of this project, I hope there will not be many additions &mdash; I would like to keep the CSS as simple as the display of the document content. If you have thoughts, please <a href="https://github.com/chrisbroski/simple.css">fork the repository</a> or <a href="https://github.com/chrisbroski/simple.css/issues">report an issue</a>. 
+
+<!-- https://github.com/chrisbroski/simple.css -->
+
+</div>
