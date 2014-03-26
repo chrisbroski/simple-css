@@ -58,9 +58,13 @@ div.article > *:first-child {margin-top: 0; }</pre>
 <p>For screen resolutions smaller than 580 pixels, we need to add a little space around the content so it is not smashed up against the top and sides of the browser window. It is also nice to add some extra white space at the end so the last of the content is not stuck to the bottom of the browser. This gives the user the freedom to scroll the final bits to a more natural reading position.
 
 <h3>Remove Top Margin from First Element</h3>
-<pre>div.article > *:first-child {margin-top: 0; }</pre>
+<pre>div.article &gt; *:first-child {margin-top: 0; }</pre>
 <p>At the beginning of this article, I mentioned that all HTML body content was wrapped in a div element with class "article." There are reasons for this, but the most practical is that it is required to enable "reader mode" support in mobile Safari.
 <p>This, in addition to the CSS rule, will make your content begin immediately after the 10px html top padding, instead of after a useless gaping blank spot caused by the browser's default margins.
+
+<h3>Paragraph Line Height</h3>
+<pre>div.article &gt; *:first-child {margin-top: 0; }</pre>
+<p>Browser's default line spacing is a little cramped. Some typographic standards recommend 1.5 times the line height, which I agree looks better so I'll change that.
 
 <h3>Hopefully a Good Start</h3>
 <p>I will be testing this CSS (by using it in my HTML documents and viewing on every device I can find) starting now, and improving it as needed. Keeping with the spirit of this project, I hope there will not be many additions &mdash; I would like to keep the CSS as simple as the display of the document content. If you have thoughts, please <a href="https://github.com/chrisbroski/simple-css/issues">report an issue</a> or if you like, fork <a href="https://github.com/chrisbroski/simple-css">the repository</a>.
