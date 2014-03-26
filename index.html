@@ -27,52 +27,51 @@ div.article > *:first-child {margin-top: 0; }
 div.article p {line-height: 1.4em; }
 </pre>
 
-<p>The page you are reading uses only this CSS, plus some styling on the <code>&lt;pre&gt;</code> elements for the code examples.
+<p>The page you are reading uses only this CSS, plus some styling on the <code>&lt;pre&gt;</code> element for code examples.
 <p>There are two HTML requirements to use <em>simple.css</em>. First is the viewport meta tag in the head section (for mobile display.)
 <pre>&lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no"&gt;</pre>
-<p>Also, the body content should be wrapped in a div with class value equal to "article."
+<p>Also, the main content should be wrapped in a div. There are reasons for this, but the most practical is that it is required to enable the "reader mode" feature in mobile Safari. I labelled it with a class value equal to "article," but you can call it whatever you like as long as the CSS selectors correctly point to it.
 
 <pre>&lt;div class="article"&gt;&lt;/div&gt;</pre>
 
-<p>When HTML5 is more widely supported I will change this to:
+<p>When HTML5 is more widely supported I plan on changing this to:
 <pre>&lt;article&gt;&lt;/article&gt;</pre>
 
 <h2>Reasoning</h2>
-<p>The thoughts behind this CSS are based on actual research, my first-hand experience, and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added, but I am happy labelling the above CSS "version 1.0."
+<p>The thoughts behind this CSS are based on actual research, my first-hand experience, and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added, but I am happy calling the above CSS "version 1.0."
 <p>Here is my reasoning for each style rule.
 
 <h3>Maximum Width</h3>
 <pre>body {max-width: 580px; }</pre>
-<p>Setting a maximum width may be the most important improvement to readability over default browser styles alone. Choose a random book from your shelf and open to any page. Count the words of a single line of paragraph text. Your measurement should fall in between 10 and 15 (or about 72 characters per line). This was not chosen randomly &mdash; the longer a line of text becomes, the easier it is to lose vertical eye position while reading a paragraph.
+<p>Setting a maximum width may be the most important improvement to readability over default browser styles alone. Choose a random book from your shelf and open to any page. Count the words of a single line of paragraph text. Your measurement should fall in between 10 and 15 (or about 72 characters per line). This was not chosen randomly &mdash; the longer a line of text becomes, the easier it is to lose vertical eye position while reading a paragraph. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C Web Content Accessibility Guidelines recommend a maximum of 80 characters per line</a>. 
 
-<p>When the Web was being invented, most screens were much smaller and lower resolution than today. Web documents that looked fine full-screen then, when displayed maximized on a 24-inch monitor are now unreadable, rendering paragraphs as one long line. A body width of 580 pixels is about 72 characters wide in my browser's default paragraph sans-serif font. 
+<p>When the Web was being invented, most screens were much smaller and lower resolution than today. Web documents that were easily readable full-screen then are now unacceptable maximized on a 24-inch, 1,920 pixel wide monitor, rendering many paragraphs as a single long line. A body width of 580 pixels is room for about 72 characters in my browser's default paragraph sans-serif font. 
 
-<p>For mobile devices the problem is the opposite &mdash; increasing readability on a tiny screen. I included the meta viewport element mentioned above to ensure the document makes use of the entire screen width on mobile devices. Using the <var>max-width</var> CSS property instead of <var>width</var> means that smaller devices will ignore its value and stretch across the entire screen.
+<p>Today we have have gargantuan monitors on our desktops and wide screen televisions in our living rooms, but we also want to view content on the minuscule screens of our smart phones. One step to presenting content so that it is also readable on the smallest screens is the <code>&lt;meta&gt;</code> viewport HTML element mentioned above. This, plus using the <var>max-width</var> CSS property instead of <var>width</var> means that smaller devices should always make use of the entire screen width when displaying your content.
 
 <h3>Font Face</h3>
 <pre>html {font-family: droid sans, sans-serif; }</pre>
 <p>Traditional serif (extra little lines on the ends of letters) fonts were developed for printed text. Unfortunately, low-resolution monitors cannot render the fine detail needed to display the serifs. Even though screen resolution is high enough today to handle serif font faces, sans-serif fonts are still considered superior for screen readability, if only to support low-resolution devices.
 
-<p>Using the generic font-family <var>sans-serif</var> instead of a specific font face in the CSS declaration, we allow the target device to choose the preferred font (typically Arial for Microsoft products and Helvetica for Apple.) Droid Sans is a very nice sans-serif screen font developed for the Android operating system. Unfortunately it is not set as the default sans-serif font in their mobile browser so I added it specifically to the CSS declaration.
+<p>Using the generic font-family <var>sans-serif</var> instead of a specific font face in the CSS declaration allows the target device to choose the preferred font (typically Arial for Microsoft products and Helvetica for Apple.) Droid Sans is a very nice sans-serif screen font developed for the Android operating system. Unfortunately it is not the default sans-serif font in their mobile browser so I included it in the CSS declaration.
 
 <h3>Floating Center</h3>
 <pre>body {margin: 0 auto; }</pre>
-<p>When a short-width document is displayed maximized in a very large monitor, by default it is flush against the left side. By centering the document content, we are positioning it directly in front of where the user's eyes will probably be. In my opinion, dividing the extra space between both sides of the content also feels more balanced compared to one huge blank area on the right.
+<p>When a short-width document is displayed maximized in a very large monitor, by default it is flush against the left side. By centering the document content, we are positioning it directly in front of where the user's eyes will probably be. In my opinion, dividing the extra space between both sides of the content also feels more balanced compared to a massive blank area on the right side.
 
-<h3>Minimal Margins</h3>
+<h3>Minimum Margins</h3>
 <pre>html {padding: 10px 10px 200px; }</pre>
-<p>For screen resolutions smaller than 580 pixels, we need to add a little space around the content so it is not smashed up against the top and sides of the browser window. It is also nice to add some extra white space at the end so the last of the content is not stuck to the bottom of the browser. This gives the user the freedom to scroll the final bits to a more natural reading position.
+<p>For screen resolutions smaller than 580 pixels, we need to make sure there is a little space around the content so it is not smashed up against the top and sides of the browser window. It is also nice to add some extra white space after the end so the last of the content is not stuck to the bottom of the browser. This gives the user the freedom to scroll the final bits to a more natural reading position.
 
 <h3>Remove Top Margin from First Element</h3>
 <pre>div.article &gt; *:first-child {margin-top: 0; }</pre>
-<p>At the beginning of this article, I mentioned that all HTML body content was wrapped in a div element with class "article." There are reasons for this, but the most practical is that it is required to enable "reader mode" support in mobile Safari.
-<p>This, in addition to the CSS rule, will make your content begin immediately after the 10px html top padding, instead of after a useless gaping blank spot caused by the browser's default margins.
+<p>This CSS rule will make your content begin immediately after the 10px html top padding, instead of after a useless gaping blank spot caused by the browser's default margins applied to the first content element.
 
 <h3>Paragraph Line Height</h3>
 <pre>div.article p {line-height: 1.4em; }</pre>
-<p>Browsers' default line spacing of 1.2em is a little cramped. Some typographic standards recommend up to 1.5 times the line height which I agree looks better so I increased it slightly.
+<p>Browsers' default line spacing of 1.2em is a little cramped. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C recommends at least 1.5 times the line height</a> which I agree looks better so I increased it slightly.
 
 <h3>Hopefully a Good Start</h3>
-<p>I will be testing this CSS (by using it in my HTML documents and viewing on every device I can find) starting now, and improving it as needed. Keeping with the spirit of this project, I hope there will not be many additions &mdash; I would like to keep the CSS as simple as the display of the document content. If you have thoughts, please <a href="https://github.com/chrisbroski/simple-css/issues">report an issue</a> or if you like, fork <a href="https://github.com/chrisbroski/simple-css">the repository</a>.
+<p>I will be testing this CSS (by using it in my HTML documents and viewing on every device I can find) and <a href="https://github.com/chrisbroski/simple-css">improving it as needed</a>. Keeping with the spirit of this project, I hope there will not be many additions &mdash; I would like to keep the CSS as simple and elegant as the display of the document content.<!-- with the goal of being small enough to easily recall it from memory.-->
 
 </div>
