@@ -20,14 +20,20 @@ pre {background: #eee; padding: 10px; overflow: auto; }
 <h1>Simple.css</h1>
 <p>Simple.css is my attempt at the least amount of CSS (in addition to the browser default styles) needed to maximize the readability (clarity and economy of display) of English language web documents on both desktop and mobile devices.
 <p>Without further digression, here is <var>simple.css</var>:
+
 <pre>html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
 body {margin: 0 auto; max-width: 580px; }
-div.article > *:first-child {margin-top: 0; }</pre>
+div.article > *:first-child {margin-top: 0; }
+div.article p {line-height: 1.5em; }
+</pre>
+
 <p>The page you are reading uses only this CSS, plus some styling on the <code>&lt;pre&gt;</code> elements for the code examples.
 <p>There are two HTML requirements to use <em>simple.css</em>. First is the viewport meta tag in the head section (for mobile display.)
 <pre>&lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no"&gt;</pre>
 <p>Also, the body content should be wrapped in a div with class value equal to "article."
+
 <pre>&lt;div class="article"&gt;&lt;/div&gt;</pre>
+
 <p>When HTML5 is more widely supported I will change this to:
 <pre>&lt;article&gt;&lt;/article&gt;</pre>
 
