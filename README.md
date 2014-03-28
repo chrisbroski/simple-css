@@ -19,7 +19,7 @@ If you have a different content element, the CSS selectors should be changed app
 Reasoning</h2>
 --------------
 
-Te thoughts behind this CSS are based on actual research, my first-hand experience, and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added, but I am happy calling the above CSS "version 1.0."
+The thoughts behind this CSS are based on actual research, my first-hand experience, and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added, but I am happy calling the above CSS "version 1.0."
 
 ere is my reasoning for each style rule.
 
@@ -55,7 +55,7 @@ For screen resolutions smaller than 580 pixels, we need to make sure there is a 
 
 ### Remove Top Margin from First Element
 
-    div.article &gt; *:first-child {margin-top: 0; }
+    div.article > *:first-child {margin-top: 0; }
 
 This CSS rule will make your content begin immediately after the 10px html top padding, instead of after a useless gaping blank spot caused by the browser's default margins applied to the first content element.
 
