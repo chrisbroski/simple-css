@@ -14,4 +14,4 @@ The body content of the page should be in a div with class "article."
 
     <div class="article"></div>
 
-Or the CSS selectors should be changed appropriately.
+If you have a different content element, the CSS selectors should be changed appropriately.
