@@ -10,7 +10,7 @@ This should be in the head section:
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
-The body content of the page should be in a div with class "article."
+The body content of the page should be in a div with class "article." There are reasons for this, but the most practical is that it is required to enable the "reader mode" feature in mobile Safari. 
 
     <div class="article"></div>
 
