@@ -19,9 +19,9 @@ If you have a different content element, the CSS selectors should be changed app
 Reasoning</h2>
 --------------
 
-The thoughts behind this CSS are based on actual research, my first-hand experience, and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added, but I am happy calling the above CSS "version 1.0."
+The thoughts behind this CSS are based on actual research, my first-hand experience, and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added.
 
-ere is my reasoning for each style rule.
+Here is my reasoning for each style rule.
 
 ### Maximum Width
 
