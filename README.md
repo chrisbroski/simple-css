@@ -8,10 +8,10 @@ HTML Requirements
 
 This should be in the head section:
 
-    &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no"&gt;
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
 The body content of the page should be in a div with class "article."
 
-    &lt;div class="article"&gt;&lt;/div&gt;
+    <div class="article"></div>
 
 Or the CSS selectors should be changed appropriately.
