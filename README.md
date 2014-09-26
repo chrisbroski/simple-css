@@ -65,3 +65,6 @@ This CSS rule will make your content begin immediately after the 10px html top p
 
 Browsers' default line spacing of 1.2em is a little cramped. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C recommends at least 1.5 times the line height</a> which I agree looks better so I increased it slightly.
 
+    div.article p {font-size: 17px; }
+
+I increased the paragraph font a little, but not so much that it looks bold.
