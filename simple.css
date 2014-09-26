@@ -1,4 +1,4 @@
 html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
 body {margin: 0 auto; max-width: 580px; }
 div.article > *:first-child {margin-top: 0; }
-div.article p {line-height: 1.4em; }
+div.article p {line-height: 1.4em; font-size: 17px; }
