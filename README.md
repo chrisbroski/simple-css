@@ -27,7 +27,7 @@ Here is my reasoning for each style rule.
 
     body {max-width: 580px; }
 
-Setting a maximum width may be the most important improvement to readability over default browser styles alone. Choose a random book from your shelf and open to any page. Count the words of a single line of paragraph text. Your measurement should fall in between 10 and 15 (or about 72 characters per line). This was not chosen randomly &mdash; the longer a line of text becomes, the easier it is to lose vertical eye position while reading a paragraph. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C Web Content Accessibility Guidelines recommend a maximum of 80 characters per line</a>.
+Setting a maximum width may be the most important improvement to readability over default browser styles alone. Choose a random book from your shelf and open to any page. Count the words of a single line of paragraph text. Your measurement should fall in between 10 and 15 (or about 72 characters per line). This was not chosen arbitrarily &mdash; the longer a line of text becomes, the easier it is to lose vertical eye position while reading a paragraph. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C Web Content Accessibility Guidelines recommend a maximum of 80 characters per line</a>.
 
 When the Web was being invented, most screens were much smaller and lower resolution than today. Web documents that were easily readable full-screen then are now unacceptable maximized on a 24-inch, 1,920 pixel wide monitor, rendering many paragraphs as a single long line. A body width of 580 pixels is room for about 72 characters in my browser's default paragraph sans-serif font.
 
