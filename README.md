@@ -10,14 +10,14 @@ This should be in the head section:
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
-The body content of the page should be in a div with class "article." There are reasons for this, but the most practical is that it is required to enable the "reader mode" feature in mobile Safari. 
+The body content of the page should be in an `article` HTML element. There are good reasons for this, but the most practical is that it is required to enable the "reader mode" feature in mobile Safari. 
 
-    <div class="article"></div>
+    <article></article>
 
 If you have a different content element, the CSS selectors should be changed appropriately.
 
-Reasoning</h2>
---------------
+Reasoning
+---------
 
 The thoughts behind this CSS are based on actual research, my first-hand experience, and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added.
 
@@ -55,16 +55,37 @@ For screen resolutions smaller than 580 pixels, we need to make sure there is a 
 
 ### Remove Top Margin from First Element
 
-    div.article > *:first-child {margin-top: 0; }
+    article > *:first-child {margin-top: 0; }
 
 This CSS rule will make your content begin immediately after the 10px html top padding, instead of after a useless gaping blank spot caused by the browser's default margins applied to the first content element.
 
 ### Paragraph Line Height
 
-    div.article p {line-height: 1.4em; }
+    article p {line-height: 1.4em; }
 
 Browsers' default line spacing of 1.2em is a little cramped. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C recommends at least 1.5 times the line height</a> which I agree looks better so I increased it slightly.
 
-    div.article p {font-size: 17px; }
+    article p {font-size: 17px; }
 
 I increased the paragraph font a little, but not so much that it looks bold.
+
+The Full HTML Template
+----------------------
+
+Here is a quick example of everything all together and ready for a copy-paste to start your page.
+
+    <!doctype html>
+    <html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title></title>
+    <style type="text/css">
+    
+    </style>
+    
+    <body>
+    <article>
+    <h1></h1>
+    <p>
+    </article>
