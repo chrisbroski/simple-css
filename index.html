@@ -3,79 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-<title>Simple.css - Increasing the display clarity of web content.</title>
+<title>README</title>
+<!--
+Index README https://github.com/chrisbroski/index-readme/
+-->
 <style type="text/css">
-/* Simple.css */
+/* https://github.com/chrisbroski/simple-css  */
 html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
 body {margin: 0 auto; max-width: 580px; }
 div.article > *:first-child {margin-top: 0; }
 div.article p {line-height: 1.4em; font-size: 17px; }
 
-/* Code examples */
-pre {background: #eee; padding: 10px; overflow: auto; }
+/* Approximating GitHub markdown styles */
+h1 {border-bottom: 1px solid #ddd; padding-bottom: 0.3em; }
+pre {padding: 1em; background: #eee; overflow: auto; }
+blockquote {margin: 16px 0; padding: 0 15px; color: #777; border-left: 4px solid #ddd; }
+table {border-collapse: collapse; }
+table td {border: 1px solid #ddd; padding: 6px 13px; }
 </style>
 
 <body>
 <div class="article">
-<h1>Simple.css</h1>
-<p>Simple.css is my attempt at the least amount of CSS (in addition to the browser default styles) needed to maximize the readability (in both clarity and economy of display) of English language web documents on both desktop and mobile devices.
-<p>Without further digression, here is <var>simple.css</var>:
-
-<pre>html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
-body {margin: 0 auto; max-width: 580px; }
-div.article > *:first-child {margin-top: 0; }
-div.article p {line-height: 1.4em; font-size: 17px; }
-</pre>
-
-<p>The page you are reading uses only this CSS, plus some styling on the <code>&lt;pre&gt;</code> element for code examples.
-<p>There are two HTML requirements to use <em>simple.css</em>. First is the viewport meta tag in the head section (for mobile display.)
-<pre>&lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no"&gt;</pre>
-<p>Also, the main content should be wrapped in a div. There are reasons for this, but the most practical is that it is required to enable the "reader mode" feature in mobile Safari. I labelled it with a class value equal to "article," but you can call it whatever you like as long as the CSS selectors correctly point to it.
-
-<pre>&lt;div class="article"&gt;&lt;/div&gt;</pre>
-
-<p>When HTML5 is more widely supported I plan on changing this to:
-<pre>&lt;article&gt;&lt;/article&gt;</pre>
-
-<h2>Reasoning</h2>
-<p>The thoughts behind this CSS are based on actual research, my first-hand experience, and some as yet unproven personal preferences. I am certain there are mistakes to be fixed and improvements to be added, but I am happy calling the above CSS "version 1.0."
-<p>Here is my reasoning for each style rule.
-
-<h3>Maximum Width</h3>
-<pre>body {max-width: 580px; }</pre>
-<p>Setting a maximum width may be the most important improvement to readability over default browser styles alone. Choose a random book from your shelf and open to any page. Count the words of a single line of paragraph text. Your measurement should fall in between 10 and 15 (or about 72 characters per line). This was not chosen arbitrarily &mdash; the longer a line of text becomes, the easier it is to lose vertical eye position while reading a paragraph. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C Web Content Accessibility Guidelines recommend a maximum of 80 characters per line</a>. 
-
-<p>When the Web was being invented, most screens were much smaller and lower resolution than today. Web documents that were easily readable full-screen then are now unacceptable maximized on a 24-inch, 1,920 pixel wide monitor, rendering many paragraphs as a single long line. A body width of 580 pixels is room for about 72 characters in my browser's default paragraph sans-serif font. 
-
-<p>Today we have have gargantuan monitors on our desktops and wide screen televisions in our living rooms, but we also want to view content on the minuscule screens of our smart phones. One step to presenting content so that it is also readable on the smallest screens is the <code>&lt;meta&gt;</code> viewport HTML element mentioned above. This, plus using the <var>max-width</var> CSS property instead of <var>width</var> means that smaller devices should always make use of the entire screen width when displaying your content.
-
-<h3>Font Face</h3>
-<pre>html {font-family: droid sans, sans-serif; }</pre>
-<p>Traditional serif (extra little lines on the ends of letters) fonts were developed for printed text. Unfortunately, low-resolution monitors cannot render the fine detail needed to display the serifs. Even though screen resolution is high enough today to handle serif font faces, sans-serif fonts are still considered superior for screen readability, if only to support low-resolution devices.
-
-<p>Using the generic font-family <var>sans-serif</var> instead of a specific font face in the CSS declaration allows the target device to choose the preferred font (typically Arial for Microsoft products and Helvetica for Apple.) Droid Sans is a very nice sans-serif screen font developed for the Android operating system. Unfortunately it is not the default sans-serif font in their mobile browser so I included it in the CSS declaration.
-
-<h3>Floating Center</h3>
-<pre>body {margin: 0 auto; }</pre>
-<p>When a short-width document is displayed maximized in a very large monitor, by default it is flush against the left side. By centering the document content, we are positioning it directly in front of where the user's eyes will probably be. In my opinion, dividing the extra space between both sides of the content also feels more balanced compared to a massive blank area on the right side.
-
-<h3>Minimum Margins</h3>
-<pre>html {padding: 10px 10px 200px; }</pre>
-<p>For screen resolutions smaller than 580 pixels, we need to make sure there is a little space around the content so it is not smashed up against the top and sides of the browser window. It is also nice to add some extra white space after the end so the last of the content is not stuck to the bottom of the browser. This gives the user the freedom to scroll the final bits to a more natural reading position.
-
-<h3>Remove Top Margin from First Element</h3>
-<pre>div.article &gt; *:first-child {margin-top: 0; }</pre>
-<p>This CSS rule will make your content begin immediately after the 10px html top padding, instead of after a useless gaping blank spot caused by the browser's default margins applied to the first content element.
-
-<h3>Paragraph Line Height</h3>
-<pre>div.article p {line-height: 1.4em; }</pre>
-<p>The browsers' default line spacing of 1.2em is a little cramped. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C recommends at least 1.5 times the line height</a> which I agree looks better so I increased it slightly.
-
-<h3>Paragraph Font Size</h3>
-<pre>div.article p {line-height: font-size: 17px; }</pre>
-<p>I increased the paragraph font size slightly to make it easier to read but without overpowering the header and bold text.
-
-<h3>Hopefully a Good Start</h3>
-<p>I will be testing this CSS (by using it in my HTML documents and viewing on every device I can find) and <a href="https://github.com/chrisbroski/simple-css">improving it as needed</a>. Keeping with the spirit of this project, I hope there will not be many additions &mdash; I would like to keep the CSS as simple and elegant as the display of the document content.
-
+<div data-src="README.md" class="mdImport"></div>
 </div>
+
+<script>
+// License for Showdown markdown to HTML convertor
+/*
+Copyright (c) 2007, John Fraser  
+<http://www.attacklab.net/>  
+All rights reserved.
+
+Original Markdown copyright (c) 2004, John Gruber  
+<http://daringfireball.net/>  
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+* Neither the name "Markdown" nor the names of its contributors may
+  be used to endorse or promote products derived from this software
+  without specific prior written permission.
+
+This software is provided by the copyright holders and contributors "as
+is" and any express or implied warranties, including, but not limited
+to, the implied warranties of merchantability and fitness for a
+particular purpose are disclaimed. In no event shall the copyright owner
+or contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to,
+procurement of substitute goods or services; loss of use, data, or
+profits; or business interruption) however caused and on any theory of
+liability, whether in contract, strict liability, or tort (including
+negligence or otherwise) arising in any way out of the use of this
+software, even if advised of the possibility of such damage.
+*/
+(function () {
+    'use strict';
+    /*! showdown 01-03-2015 */
+    var Showdown={extensions:{}},forEach=Showdown.forEach=function(a,b){if("function"==typeof a.forEach)a.forEach(b);else{var c,d=a.length;for(c=0;d>c;c++)b(a[c],c,a)}},stdExtName=function(a){return a.replace(/[_-]||\s/g,"").toLowerCase()};Showdown.converter=function(a){var b,c,d,e=0,f=[],g=[];if("undefined"!=typeof module&&"undefined"!=typeof exports&&"undefined"!=typeof require){var h=require("fs");if(h){var i=h.readdirSync((__dirname||".")+"/extensions").filter(function(a){return~a.indexOf(".js")}).map(function(a){return a.replace(/\.js$/,"")});Showdown.forEach(i,function(a){var b=stdExtName(a);Showdown.extensions[b]=require("./extensions/"+a)})}}if(this.makeHtml=function(a){return b={},c={},d=[],a=a.replace(/~/g,"~T"),a=a.replace(/\$/g,"~D"),a=a.replace(/\r\n/g,"\n"),a=a.replace(/\r/g,"\n"),a="\n\n"+a+"\n\n",a=M(a),a=a.replace(/^[ \t]+$/gm,""),Showdown.forEach(f,function(b){a=l(b,a)}),a=z(a),a=n(a),a=m(a),a=p(a),a=K(a),a=a.replace(/~D/g,"$$"),a=a.replace(/~T/g,"~"),Showdown.forEach(g,function(b){a=l(b,a)}),a},a&&a.extensions){var j=this;Showdown.forEach(a.extensions,function(a){if("string"==typeof a&&(a=Showdown.extensions[stdExtName(a)]),"function"!=typeof a)throw"Extension '"+a+"' could not be loaded.  It was either not found or is not a valid extension.";Showdown.forEach(a(j),function(a){a.type?"language"===a.type||"lang"===a.type?f.push(a):("output"===a.type||"html"===a.type)&&g.push(a):g.push(a)})})}var k,l=function(a,b){if(a.regex){var c=new RegExp(a.regex,"g");return b.replace(c,a.replace)}return a.filter?a.filter(b):void 0},m=function(a){return a+="~0",a=a.replace(/^[ ]{0,3}\[(.+)\]:[ \t]*\n?[ \t]*<?(\S+?)>?[ \t]*\n?[ \t]*(?:(\n*)["(](.+?)[")][ \t]*)?(?:\n+|(?=~0))/gm,function(a,d,e,f,g){return d=d.toLowerCase(),b[d]=G(e),f?f+g:(g&&(c[d]=g.replace(/"/g,"&quot;")),"")}),a=a.replace(/~0/,"")},n=function(a){a=a.replace(/\n/g,"\n\n");return a=a.replace(/^(<(p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|ins|del)\b[^\r]*?\n<\/\2>[ \t]*(?=\n+))/gm,o),a=a.replace(/^(<(p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|style|section|header|footer|nav|article|aside)\b[^\r]*?<\/\2>[ \t]*(?=\n+)\n)/gm,o),a=a.replace(/(\n[ ]{0,3}(<(hr)\b([^<>])*?\/?>)[ \t]*(?=\n{2,}))/g,o),a=a.replace(/(\n\n[ ]{0,3}<!(--[^\r]*?--\s*)+>[ \t]*(?=\n{2,}))/g,o),a=a.replace(/(?:\n\n)([ ]{0,3}(?:<([?%])[^\r]*?\2>)[ \t]*(?=\n{2,}))/g,o),a=a.replace(/\n\n/g,"\n")},o=function(a,b){var c=b;return c=c.replace(/\n\n/g,"\n"),c=c.replace(/^\n/,""),c=c.replace(/\n+$/g,""),c="\n\n~K"+(d.push(c)-1)+"K\n\n"},p=function(a){a=w(a);var b=A("<hr />");return a=a.replace(/^[ ]{0,2}([ ]?\*[ ]?){3,}[ \t]*$/gm,b),a=a.replace(/^[ ]{0,2}([ ]?\-[ ]?){3,}[ \t]*$/gm,b),a=a.replace(/^[ ]{0,2}([ ]?\_[ ]?){3,}[ \t]*$/gm,b),a=x(a),a=y(a),a=E(a),a=n(a),a=F(a)},q=function(a){return a=B(a),a=r(a),a=H(a),a=u(a),a=s(a),a=I(a),a=G(a),a=D(a),a=a.replace(/  +\n/g," <br />\n")},r=function(a){var b=/(<[a-z\/!$]("[^"]*"|'[^']*'|[^'">])*>|<!(--.*?--\s*)+>)/gi;return a=a.replace(b,function(a){var b=a.replace(/(.)<\/?code>(?=.)/g,"$1`");return b=N(b,"\\`*_")})},s=function(a){return a=a.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\][ ]?(?:\n[ ]*)?\[(.*?)\])()()()()/g,t),a=a.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\]\([ \t]*()<?(.*?(?:\(.*?\).*?)?)>?[ \t]*((['"])(.*?)\6[ \t]*)?\))/g,t),a=a.replace(/(\[([^\[\]]+)\])()()()()()/g,t)},t=function(a,d,e,f,g,h,i,j){void 0==j&&(j="");var k=d,l=e,m=f.toLowerCase(),n=g,o=j;if(""==n)if(""==m&&(m=l.toLowerCase().replace(/ ?\n/g," ")),n="#"+m,void 0!=b[m])n=b[m],void 0!=c[m]&&(o=c[m]);else{if(!(k.search(/\(\s*\)$/m)>-1))return k;n=""}n=N(n,"*_");var p='<a href="'+n+'"';return""!=o&&(o=o.replace(/"/g,"&quot;"),o=N(o,"*_"),p+=' title="'+o+'"'),p+=">"+l+"</a>"},u=function(a){return a=a.replace(/(!\[(.*?)\][ ]?(?:\n[ ]*)?\[(.*?)\])()()()()/g,v),a=a.replace(/(!\[(.*?)\]\s?\([ \t]*()<?(\S+?)>?[ \t]*((['"])(.*?)\6[ \t]*)?\))/g,v)},v=function(a,d,e,f,g,h,i,j){var k=d,l=e,m=f.toLowerCase(),n=g,o=j;if(o||(o=""),""==n){if(""==m&&(m=l.toLowerCase().replace(/ ?\n/g," ")),n="#"+m,void 0==b[m])return k;n=b[m],void 0!=c[m]&&(o=c[m])}l=l.replace(/"/g,"&quot;"),n=N(n,"*_");var p='<img src="'+n+'" alt="'+l+'"';return o=o.replace(/"/g,"&quot;"),o=N(o,"*_"),p+=' title="'+o+'"',p+=" />"},w=function(a){function b(a){return a.replace(/[^\w]/g,"").toLowerCase()}return a=a.replace(/^(.+)[ \t]*\n=+[ \t]*\n+/gm,function(a,c){return A('<h1 id="'+b(c)+'">'+q(c)+"</h1>")}),a=a.replace(/^(.+)[ \t]*\n-+[ \t]*\n+/gm,function(a,c){return A('<h2 id="'+b(c)+'">'+q(c)+"</h2>")}),a=a.replace(/^(\#{1,6})[ \t]*(.+?)[ \t]*\#*\n+/gm,function(a,c,d){var e=c.length;return A("<h"+e+' id="'+b(d)+'">'+q(d)+"</h"+e+">")})},x=function(a){a+="~0";var b=/^(([ ]{0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(~0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/gm;return e?a=a.replace(b,function(a,b,c){var d=b,e=c.search(/[*+-]/g)>-1?"ul":"ol";d=d.replace(/\n{2,}/g,"\n\n\n");var f=k(d);return f=f.replace(/\s+$/,""),f="<"+e+">"+f+"</"+e+">\n"}):(b=/(\n\n|^\n?)(([ ]{0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(~0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/g,a=a.replace(b,function(a,b,c,d){var e=b,f=c,g=d.search(/[*+-]/g)>-1?"ul":"ol",f=f.replace(/\n{2,}/g,"\n\n\n"),h=k(f);return h=e+"<"+g+">\n"+h+"</"+g+">\n"})),a=a.replace(/~0/,"")};k=function(a){return e++,a=a.replace(/\n{2,}$/,"\n"),a+="~0",a=a.replace(/(\n)?(^[ \t]*)([*+-]|\d+[.])[ \t]+([^\r]+?(\n{1,2}))(?=\n*(~0|\2([*+-]|\d+[.])[ \t]+))/gm,function(a,b,c,d,e){var f=e,g=b;return g||f.search(/\n{2,}/)>-1?f=p(L(f)):(f=x(L(f)),f=f.replace(/\n$/,""),f=q(f)),"<li>"+f+"</li>\n"}),a=a.replace(/~0/g,""),e--,a};var y=function(a){return a+="~0",a=a.replace(/(?:\n\n|^)((?:(?:[ ]{4}|\t).*\n+)+)(\n*[ ]{0,3}[^ \t\n]|(?=~0))/g,function(a,b,c){var d=b,e=c;return d=C(L(d)),d=M(d),d=d.replace(/^\n+/g,""),d=d.replace(/\n+$/g,""),d="<pre><code>"+d+"\n</code></pre>",A(d)+e}),a=a.replace(/~0/,"")},z=function(a){return a+="~0",a=a.replace(/(?:^|\n)```(.*)\n([\s\S]*?)\n```/g,function(a,b,c){var d=b,e=c;return e=C(e),e=M(e),e=e.replace(/^\n+/g,""),e=e.replace(/\n+$/g,""),e="<pre><code"+(d?' class="'+d+'"':"")+">"+e+"\n</code></pre>",A(e)}),a=a.replace(/~0/,"")},A=function(a){return a=a.replace(/(^\n+|\n+$)/g,""),"\n\n~K"+(d.push(a)-1)+"K\n\n"},B=function(a){return a=a.replace(/(^|[^\\])(`+)([^\r]*?[^`])\2(?!`)/gm,function(a,b,c,d){var e=d;return e=e.replace(/^([ \t]*)/g,""),e=e.replace(/[ \t]*$/g,""),e=C(e),b+"<code>"+e+"</code>"})},C=function(a){return a=a.replace(/&/g,"&amp;"),a=a.replace(/</g,"&lt;"),a=a.replace(/>/g,"&gt;"),a=N(a,"*_{}[]\\",!1)},D=function(a){return a=a.replace(/(\*\*|__)(?=\S)([^\r]*?\S[*_]*)\1/g,"<strong>$2</strong>"),a=a.replace(/(\*|_)(?=\S)([^\r]*?\S)\1/g,"<em>$2</em>")},E=function(a){return a=a.replace(/((^[ \t]*>[ \t]?.+\n(.+\n)*\n*)+)/gm,function(a,b){var c=b;return c=c.replace(/^[ \t]*>[ \t]?/gm,"~0"),c=c.replace(/~0/g,""),c=c.replace(/^[ \t]+$/gm,""),c=p(c),c=c.replace(/(^|\n)/g,"$1  "),c=c.replace(/(\s*<pre>[^\r]+?<\/pre>)/gm,function(a,b){var c=b;return c=c.replace(/^  /gm,"~0"),c=c.replace(/~0/g,"")}),A("<blockquote>\n"+c+"\n</blockquote>")})},F=function(a){a=a.replace(/^\n+/g,""),a=a.replace(/\n+$/g,"");for(var b=a.split(/\n{2,}/g),c=[],e=b.length,f=0;e>f;f++){var g=b[f];g.search(/~K(\d+)K/g)>=0?c.push(g):g.search(/\S/)>=0&&(g=q(g),g=g.replace(/^([ \t]*)/g,"<p>"),g+="</p>",c.push(g))}e=c.length;for(var f=0;e>f;f++)for(;c[f].search(/~K(\d+)K/)>=0;){var h=d[RegExp.$1];h=h.replace(/\$/g,"$$$$"),c[f]=c[f].replace(/~K\d+K/,h)}return c.join("\n\n")},G=function(a){return a=a.replace(/&(?!#?[xX]?(?:[0-9a-fA-F]+|\w+);)/g,"&amp;"),a=a.replace(/<(?![a-z\/?\$!])/gi,"&lt;")},H=function(a){return a=a.replace(/\\(\\)/g,O),a=a.replace(/\\([`*_{}\[\]()>#+-.!])/g,O)},I=function(a){return a=a.replace(/<((https?|ftp|dict):[^'">\s]+)>/gi,'<a href="$1">$1</a>'),a=a.replace(/<(?:mailto:)?([-.\w]+\@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)>/gi,function(a,b){return J(K(b))})},J=function(a){var b=[function(a){return"&#"+a.charCodeAt(0)+";"},function(a){return"&#x"+a.charCodeAt(0).toString(16)+";"},function(a){return a}];return a="mailto:"+a,a=a.replace(/./g,function(a){if("@"==a)a=b[Math.floor(2*Math.random())](a);else if(":"!=a){var c=Math.random();a=c>.9?b[2](a):c>.45?b[1](a):b[0](a)}return a}),a='<a href="'+a+'">'+a+"</a>",a=a.replace(/">.+:/g,'">')},K=function(a){return a=a.replace(/~E(\d+)E/g,function(a,b){var c=parseInt(b);return String.fromCharCode(c)})},L=function(a){return a=a.replace(/^(\t|[ ]{1,4})/gm,"~0"),a=a.replace(/~0/g,"")},M=function(a){return a=a.replace(/\t(?=\t)/g,"    "),a=a.replace(/\t/g,"~A~B"),a=a.replace(/~B(.+?)~A/g,function(a,b){for(var c=b,d=4-c.length%4,e=0;d>e;e++)c+=" ";return c}),a=a.replace(/~A/g,"    "),a=a.replace(/~B/g,"")},N=function(a,b,c){var d="(["+b.replace(/([\[\]\\])/g,"\\$1")+"])";c&&(d="\\\\"+d);var e=new RegExp(d,"g");return a=a.replace(e,O)},O=function(a,b){var c=b.charCodeAt(0);return"~E"+c+"E"}},"undefined"!=typeof module&&(module.exports=Showdown),"function"==typeof define&&define.amd&&define("showdown",function(){return Showdown}),"undefined"!=typeof angular&&"undefined"!=typeof Showdown&&!function(a,b){function c(){function a(){var a=new b.converter(c);this.makeHtml=function(b){return a.makeHtml(b)},this.stripHtml=function(a){return String(a).replace(/<[^>]+>/gm,"")}}var c={extensions:[],stripHtml:!0};this.setOption=function(a,b){return c.key=b,this},this.getOption=function(a){return c.hasOwnProperty(a)?c.key:null},this.loadExtension=function(a){return c.extensions.push(a),this},this.$get=function(){return new a}}function d(a){var b=function(b,c){b.$watch("model",function(b){var d;d="string"==typeof b?a.makeHtml(b):typeof b,c.html(d)})};return{restrict:"A",link:b,scope:{model:"=sdModelToHtml"}}}function e(){return function(a){return String(a).replace(/<[^>]+>/gm,"")}}a.provider("$Showdown",c).directive("sdModelToHtml",["$Showdown",d]).filter("sdStripHtml",e)}(angular.module("Showdown",[]),Showdown);
+
+    function mdInclude(filePath, el) {
+        var xhr = new XMLHttpRequest();
+
+        // get file with ajax
+        xhr.open("GET", filePath, true);
+        xhr.onreadystatechange = function () {
+            var converter;
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200 || xhr.status === 304) {
+                    converter = new Showdown.converter();
+                    el.innerHTML = converter.makeHtml(xhr.responseText);
+                } else if (xhr.status === 404) {
+                    el.innerHTML = 'Not found: ' + xhr.responseURL;
+                } else {
+                    el.innerHTML = 'Error status: ' + xhr.status;
+                }
+            }
+        };
+        xhr.send('');
+    }
+
+    window.onload = function () {
+        mdInclude('README.md', document.querySelector('div.mdImport'));
+    };
+}());
+</script>
