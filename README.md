@@ -80,8 +80,13 @@ Here is a quick example of everything all together and ready for a copy-paste to
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <title></title>
-    <style type="text/css">
     
+    <style type="text/css">
+    html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
+    body {margin: 0 auto; max-width: 580px; }
+    article > *:first-child {margin-top: 0; }
+    article p {line-height: 1.4em; font-size: 17px; }
+    article li {margin-bottom: 0.3em; line-height: 1.4em; font-size: 16px; }
     </style>
     
     <body>
