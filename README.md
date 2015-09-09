@@ -101,7 +101,7 @@ I increased the paragraph font a little, but not so much that it looks bold.
 
 I also included slightly different styles for list items. Document content should almost always be contained in an `h1`-`h6`, `p`, or `li` element, so the CSS should handle most pages.
 
-Don't Be AFraid to Add More
+Don't Be Afraid to Add More
 ---------------------------
 
 This CSS and HTML is a good starting point, but most page content will need more. I will revisit this if I find common content that requires additional styling. If you have suggestions, please submit an issue.
