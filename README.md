@@ -15,12 +15,12 @@ Simple.css is my attempt at the least amount of CSS (in addition to the browser 
     html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
     body {margin: 0 auto; max-width: 580px; }
     article > *:first-child {margin-top: 0; }
-    li {margin-bottom: 0.3em; line-height: 1.4em; font-size: 16px; }
+    li {font-size: 16px; margin-bottom: 0.3em; line-height: 1.4em; }
     h1 {font-size: 36px; }
-    h2 {padding-bottom: 0.2em; border-bottom: 1px solid #bbb; font-size: 28px; }
+    h2 {font-size: 28px; padding-bottom: 0.2em; border-bottom: 1px solid #bbb; }
     h3 {font-size: 24px; }
-    h4 {padding: 0.2em; background: #eee; font-size: 20px; }
-    p, h5 {line-height: 1.4em; font-size: 17px; }
+    h4 {font-size: 20px; padding: 0.2em; background: #eee; }
+    p, h5 {font-size: 17px; line-height: 1.4em; }
     pre {padding: 1em; background: #eee; overflow: auto; }
     blockquote {margin: 16px 0; padding: 0 15px; color: #777; border-left: 4px solid #ddd; }
     table {border-collapse: collapse; }
@@ -119,9 +119,9 @@ I also included slightly different styles for list items. Document content shoul
 Headers of adjacent level are different to distinguish between, so I added a unique style to h2 and h4.
 
     h1 {font-size: 36px; }
-    h2 {font-size: 28px; }
+    h2 {font-size: 28px; padding-bottom: 0.2em; border-bottom: 1px solid #bbb; }
     h3 {font-size: 24px; }
-    h4 {font-size: 20px; }
+    h4 {font-size: 20px; padding: 0.2em; background: #eee; }
     h5 {font-size: 17px; }
 
 Since the paragraph font is 17px, I adjusted the header font size to make relative sense.
