@@ -8,9 +8,9 @@ Simple.css is my attempt at the least amount of CSS (in addition to the browser 
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <title></title>
+    <title>Title</title>
 
-    <style type="text/css">
+    <style>
     * {box-sizing: border-box; }
     html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
     body {margin: 0 auto; max-width: 580px; }
@@ -29,7 +29,7 @@ Simple.css is my attempt at the least amount of CSS (in addition to the browser 
 
     <body>
     <article>
-    <h1></h1>
+    <h1>Title</h1>
     <p>
     </article>
 
