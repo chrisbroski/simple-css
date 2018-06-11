@@ -8,22 +8,30 @@ Simple.css is my attempt at the least amount of CSS (in addition to the browser 
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <title></title>
-    
-    <style type="text/css">
+    <title>Title</title>
+
+    <style>
+    * {box-sizing: border-box; }
     html {padding: 10px 10px 200px; font-family: droid sans, sans-serif; }
     body {margin: 0 auto; max-width: 580px; }
     article > *:first-child {margin-top: 0; }
-    article p {line-height: 1.4em; font-size: 17px; }
-    article li {margin-bottom: 0.3em; line-height: 1.4em; font-size: 16px; }
+    li {font-size: 16px; margin-bottom: 0.3em; line-height: 1.4em; }
+    h1 {font-size: 36px; }
+    h2 {font-size: 28px; padding-bottom: 0.2em; border-bottom: 1px solid #bbb; }
+    h3 {font-size: 24px; }
+    h4 {font-size: 20px; padding: 0.2em; background: #eee; }
+    p, h5 {font-size: 17px; line-height: 1.4em; }
+    pre {padding: 1em; background: #eee; overflow: auto; }
+    blockquote {margin: 16px 0; padding: 0 15px; color: #777; border-left: 4px solid #ddd; }
+    table {border-collapse: collapse; }
+    table td {border: 1px solid #ddd; padding: 6px 13px; }
     </style>
-    
+
     <body>
     <article>
-    <h1></h1>
+    <h1>Title</h1>
     <p>
     </article>
-
 
 HTML Requirements
 -----------------
@@ -34,7 +42,7 @@ To more gracefully handle display on mobile devices, put this meta tag in the he
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
-The body content of the page should be in an `article` HTML element. There are some good reasons for this, but the most practical is that it is required to enable the "reader mode" feature in mobile Safari. 
+The body content of the page should be in an `article` HTML element. There are some good reasons for this, but the most practical is that it is required to enable the "reader mode" feature in mobile Safari.
 
     <article></article>
 
@@ -47,7 +55,13 @@ The reasoning behind the CSS is based on actual research, my first-hand experien
 
 Here is my reasoning for each style rule.
 
-###Maximum Width
+### Box Sizing
+
+    * {box-sizing: border-box; }
+
+When setting height and width in CSS, it will now take into account the padding and borders in the final size.
+
+### Maximum Width
 
     body {max-width: 580px; }
 
@@ -57,7 +71,7 @@ When the Web was young, most screens were much smaller and lower resolution than
 
 Today we have have gargantuan monitors on our desktops and wide screen televisions in our living rooms, but we also want to view the same content on the minuscule screens of our smart phones. How is this possible? One technique is the <code>&lt;meta&gt;</code> viewport HTML element mentioned above. This, plus using the <var>max-width</var> CSS property instead of <var>width</var> means that smaller devices should always make use of the full screen width when displaying your content.
 
-###Font Face
+### Font Face
 
     html {font-family: droid sans, sans-serif; }
 
@@ -65,37 +79,85 @@ Traditional serif (extra little lines on the ends of letters) fonts were develop
 
 Using the generic font-family <var>sans-serif</var> instead of a specific font face in the CSS declaration allows the target device to choose the preferred font (typically Arial for Microsoft products and Helvetica for Apple.) Droid Sans is a very nice sans-serif screen font developed for the Android operating system. Unfortunately it is not the default sans-serif font in their mobile browser so I added it to the CSS declaration.
 
-###Floating Center
+### Floating Center
 
     body {margin: 0 auto; }
 
 When a short-width document is displayed maximized in a very large monitor, by default it is flush against the left side. By centering the document content, we are positioning it directly in front of where the user's eyes will probably be. In my opinion, dividing the extra space between both sides of the content also feels more balanced compared to a massive blank gap on the right side.
 
-###Minimum Margins
+### Minimum Margins
 
     html {padding: 10px 10px 200px; }
 
 For screen resolutions smaller than 580 pixels, we need to make sure there is a little space around the content so it is not smashed up against the top and sides of the browser window. It is also nice to add some extra white space after the end so the last of the content is not stuck to the bottom of the browser. This gives the user the freedom to scroll the final bits to a more natural reading position.
 
-###Remove Top Margin from First Element
+### Remove Top Margin from First Element
 
     article > *:first-child {margin-top: 0; }
 
 This CSS rule will make your content begin immediately after the 10px html top padding, instead of after a useless gaping blank spot caused by the browser's default margins applied to the top of the first element.
 
-###Paragraph Line Height
+### Paragraph Line Height
 
-    article p {line-height: 1.4em; }
+    p {line-height: 1.4em; }
 
 Browsers' default line spacing of 1.2em is a little cramped. <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation">The W3C recommends at least 1.5 times the line height</a> which I agree looks better so I increased it slightly.
 
-    article p {font-size: 17px; }
+    p {font-size: 17px; }
 
 I increased the paragraph font a little, but not so much that it looks bold.
 
-    article li {margin-bottom: 0.3em; line-height: 1.4em; font-size: 16px; }
+    li {margin-bottom: 0.3em; line-height: 1.4em; font-size: 16px; }
 
 I also included slightly different styles for list items. Document content should almost always be contained in an `h1`-`h6`, `p`, or `li` element, so the CSS should handle most pages.
+
+### Header Styles
+
+    h2 {padding-bottom: 0.2em; border-bottom: 1px solid #bbb; }
+    h4 {padding: 0.2em; background: #eee; }
+
+Headers of adjacent level are different to distinguish between, so I added a unique style to h2 and h4.
+
+    h1 {font-size: 36px; }
+    h2 {font-size: 28px; padding-bottom: 0.2em; border-bottom: 1px solid #bbb; }
+    h3 {font-size: 24px; }
+    h4 {font-size: 20px; padding: 0.2em; background: #eee; }
+    h5 {font-size: 17px; }
+
+Since the paragraph font is 17px, I adjusted the header font size to make relative sense.
+
+Here is how they should look:
+
+# H1 Header
+
+## H2 Header
+
+### H3 Header
+
+#### H4 Header
+
+##### H5 Header
+
+###### H6 Header
+
+### Prerendered Text
+
+    pre {padding: 1em; background: #eee; overflow: auto; }
+
+To display blocks of code, I add a background and a scrollable container.
+
+### Block Quote
+
+    blockquote {margin: 16px 0; padding: 0 15px; color: #777; border-left: 4px solid #ddd; }
+
+Quotes are indented with a left side border.
+
+### Tables
+
+    table {border-collapse: collapse; }
+    table td {border: 1px solid #ddd; padding: 6px 13px; }
+
+Collapse space between cells and lighten default borders.
 
 Don't Be Afraid to Add More
 ---------------------------
